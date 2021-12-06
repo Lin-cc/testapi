@@ -4,17 +4,17 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://+:55134",
-      "sslPort": 44377
+      "applicationUrl": "http://+:48660",
+      "sslPort": 44331
     }
   },
   "profiles": {
-    "dotnetdemo": {
+    "testapi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://+:8101;http://+:8100",
+      "applicationUrl": "https://+:7000;http://+:8000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

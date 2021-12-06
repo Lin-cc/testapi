@@ -1,4 +1,4 @@
-namespace dotnetdemo;
+namespace testapi;
 
 public class WeatherForecast
 {
