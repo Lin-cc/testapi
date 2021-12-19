@@ -8,11 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 // builder.Services.AddEndpointsApiExplorer();
 // builder.Services.AddSwaggerGen();
 
-builder.Host.UseAutofac();
+
 
 builder.Services.ReplaceConfiguration(builder.Configuration);
 
 builder.Services.AddApplication<LinAppWebModule>();
+builder.Host.UseAutofac();
 
 var app = builder.Build();
 

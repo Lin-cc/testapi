@@ -1,15 +1,28 @@
 using System;
+using lin.app.Application;
+using lin.app.Application.Contracts;
+using lin.app.Application.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Autofac;
+using Volo.Abp.Data;
+using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.MySQL;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 
 [DependsOn(
     typeof(AbpAspNetCoreMvcModule),
     typeof(AbpAutofacModule),
-    typeof(AbpSwashbuckleModule)
+    typeof(AbpSwashbuckleModule),
+
+    typeof(AbpEntityFrameworkCoreModule),
+    typeof(AbpEntityFrameworkCoreMySQLModule),
+    typeof(LinAppEntityFrameworkModule),
+    typeof(LinAppApplicationContractsModule),
+    typeof(LinAppApplicationModule)
+
 )]
 public class LinAppWebModule : AbpModule
 {
@@ -19,6 +32,12 @@ public class LinAppWebModule : AbpModule
 
         //... other configarations.
 
+        Configure<AbpAspNetCoreMvcOptions>(options =>
+        {
+            options
+                .ConventionalControllers
+                .Create(typeof(LinAppApplicationModule).Assembly);
+        });
         services.AddAbpSwaggerGen(
             options =>
             {

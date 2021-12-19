@@ -5,8 +5,16 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="5.0.0"/>
-		<PackageReference Include="Volo.Abp.Swashbuckle" Version="5.0.0"/>
-		<PackageReference Include="Volo.Abp.Autofac" Version="5.0.0"/>
+		<PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="5.0.0" />
+		<PackageReference Include="Volo.Abp.Swashbuckle" Version="5.0.0" />
+		<PackageReference Include="Volo.Abp.Autofac" Version="5.0.0" />
+		<PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="5.0.0" />
+		<PackageReference Include="Volo.Abp.EntityFrameworkCore.MySQL" Version="5.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\lin.app.Application.Contracts\lin.app.Application.Contracts.csproj" />
+		<ProjectReference Include="..\lin.app.Application\lin.app.Application.csproj" />
+		<ProjectReference Include="..\lin.app.EntityFrameworkCore\lin.app.EntityFrameworkCore.csproj" />
 	</ItemGroup>
 </Project>

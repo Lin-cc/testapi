@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<ItemGroup>
+		<ProjectReference Include="..\lin.app.Domain\lin.app.Domain.csproj" />
+		<ProjectReference Include="..\lin.app.Application.Contracts\lin.app.Application.Contracts.csproj" />
+	</ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Application" Version="5.0.0" />
+		<PackageReference Include="Volo.Abp.AutoMapper" Version="5.0.0" />
+	</ItemGroup>
+</Project>
