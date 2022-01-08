@@ -22,11 +22,12 @@ namespace lin.app.Application.EntityFrameworkCore
 
             context.Services.AddAbpDbContext<LinAppDbContext>(option =>
             {
-                //��Ҫע��Ĭ�ϵĲִ�
+                //��Ҫע��Ĭ�ϵĲִ�
                 option.AddDefaultRepositories<LinAppDbContext>(true);
             });
             Configure<AbpDbContextOptions>(option =>
             {
+                // option.UseSqlServer();
                 option.UseMySQL();
             });
         }
