@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using lin.app.EntityFrameworkCore.EntityframeworkCore;
 
@@ -10,9 +11,10 @@ using lin.app.EntityFrameworkCore.EntityframeworkCore;
 namespace lin.app.EntityFrameworkCore.Migrations
 {
     [DbContext(typeof(LinAppDbContext))]
-    partial class LinAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220116095759_update_identity")]
+    partial class update_identity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

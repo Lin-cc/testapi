@@ -4,13 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using lin.app.Domain.Entitys;
 using Microsoft.EntityFrameworkCore;
+using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
 
 namespace lin.app.EntityFrameworkCore.EntityframeworkCore
 {
-    public class LinAppDbContext : AbpDbContext<LinAppDbContext>, IEfCoreDbContext
+    [ReplaceDbContext(typeof(IIdentityDbContext))]
+    //[ReplaceDbContext(typeof(ITenantManagementDbContext))]
+    public class LinAppDbContext : AbpDbContext<LinAppDbContext>, IEfCoreDbContext, IIdentityDbContext
     {
   
         public LinAppDbContext(DbContextOptions<LinAppDbContext> options) : base(options)
@@ -33,7 +36,7 @@ namespace lin.app.EntityFrameworkCore.EntityframeworkCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            //base.OnModelCreating(modelBuilder);
             modelBuilder.ConfigureIdentity();
         }
     }

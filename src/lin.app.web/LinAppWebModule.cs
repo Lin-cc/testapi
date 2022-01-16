@@ -10,6 +10,7 @@ using Volo.Abp.Autofac;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.MySQL;
+using Volo.Abp.Identity.Web;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 
@@ -23,7 +24,9 @@ using Volo.Abp.Swashbuckle;
     typeof(LinAppEntityFrameworkModule),
     typeof(LinAppApplicationContractsModule),
     typeof(LinAppApplicationModule),
+    typeof(AbpIdentityWebModule),
     typeof(AbpAccountWebModule)
+    
 
 )]
 public class LinAppWebModule : AbpModule
@@ -68,10 +71,13 @@ public class LinAppWebModule : AbpModule
         app.UseAbpSwaggerUI();
         app.UseStaticFiles();
         app.UseRouting();
+        app.UseAuthentication();
+        app.UseAuthorization();
         app.UseConfiguredEndpoints(
             option =>
             {
                 option.Map("/", () => $"lin app web,now:{DateTime.Now}");
+                
             }
         );
     }

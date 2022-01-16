@@ -26,7 +26,7 @@ namespace lin.app.Application.EntityFrameworkCore
             {
                 //��Ҫע��Ĭ�ϵĲִ�
                 option.AddDefaultRepositories<LinAppDbContext>(true);
-                option.AddDefaultRepositories(includeAllEntities: true);
+                
             });
             Configure<AbpDbContextOptions>(option =>
             {
