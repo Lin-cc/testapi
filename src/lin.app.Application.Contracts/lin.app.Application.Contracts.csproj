@@ -1,6 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<ItemGroup>
-		<ProjectReference Include="..\lin.app.Domian.Shared\lin.app.Domain.Shared.csproj" />
+		<ProjectReference Include="..\lin.app.Domian.Shared\lin.app.Domain.Shared.csproj"/>
 	</ItemGroup>
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
@@ -8,6 +8,8 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="5.0.0" />
+		<PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="5.0.0"/>
+		<PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="5.0.0"/>
+		
 	</ItemGroup>
 </Project>

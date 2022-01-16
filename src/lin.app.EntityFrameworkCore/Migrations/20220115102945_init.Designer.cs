@@ -12,8 +12,8 @@ using lin.app.EntityFrameworkCore.EntityframeworkCore;
 namespace lin.app.EntityFrameworkCore.Migrations
 {
     [DbContext(typeof(LinAppDbContext))]
-    [Migration("20211219142625_changefiled")]
-    partial class changefiled
+    [Migration("20220115102945_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

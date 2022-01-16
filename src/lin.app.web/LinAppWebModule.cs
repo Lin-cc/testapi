@@ -4,6 +4,7 @@ using lin.app.Application.Contracts;
 using lin.app.Application.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Volo.Abp;
+using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Autofac;
 using Volo.Abp.Data;
@@ -21,7 +22,8 @@ using Volo.Abp.Swashbuckle;
     typeof(AbpEntityFrameworkCoreMySQLModule),
     typeof(LinAppEntityFrameworkModule),
     typeof(LinAppApplicationContractsModule),
-    typeof(LinAppApplicationModule)
+    typeof(LinAppApplicationModule),
+    typeof(AbpAccountWebModule)
 
 )]
 public class LinAppWebModule : AbpModule
